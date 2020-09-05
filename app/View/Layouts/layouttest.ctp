@@ -54,12 +54,15 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 				);
 			?>
 			<p>
-				<?php echo $cakeVersion; ?>
+                <?php echo $cakeVersion; 
+                ?>
 			</p>
 		</div>
 	</div>
 	<?php
-	//  echo $this->element('sql_dump'); 
+    //  echo $this->element('sql_dump'); 
+    
+    echo 'こんちは';
 	 ?>
 </body>
 </html>
