@@ -3,13 +3,13 @@
 class Member extends AppModel{
 
   public $belongsTo = array('Division');
-
+  
   function test()
   {
-    $members = $this->find(
-        'all',
-        array('conditions' => array('Member.name like' => '山田%'))
-      );
+    // $members = $this->find(
+    //     'all',
+    //     array('conditions' => array('Member.name like' => '山田%'))
+    //   );
       //$this->log($members, LOG_DEBUG);
 
       // $divisions = $this->Division->find(

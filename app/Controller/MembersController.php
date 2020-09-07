@@ -100,5 +100,35 @@ class MembersController extends AppController {
             // printf('ID is %d', $member['Member']['id']);
             $this->log($member9['Member']['id'], LOG_DEBUG);
         }
-	}
+    }
+    
+    public function index2()
+    {
+        $members = $this->Member->find('all', array('order' => 'Member.id'));
+        
+        $this->set('members', $members);
+    }
+
+    public function index3()
+    {
+        $members = $this->Member->find(
+            'all',
+            array('conditions' => array('Division.name like' => '営業%'))
+        );
+
+        $this->log($members, LOG_DEBUG);
+    }
+
+    public function index4()
+    {
+        $this->Member->unbindModel(array('belongsTo' => array('Division')));
+        $members = $this->Member->find(
+            'all'
+        );
+        $this->log($members, LOG_DEBUG);
+        $members = $this->Member->find(
+            'all'
+        );
+        $this->log($members, LOG_DEBUG);
+    }
 }
